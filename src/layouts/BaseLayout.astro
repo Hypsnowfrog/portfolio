@@ -1,0 +1,13 @@
+---
+import '../styles/global.css';
+import Seo from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title, description, site, navigation, currentPath, image } = Astro.props;
+const style = `--background:${site.theme.background};--text:${site.theme.text};--muted:${site.theme.muted};--line:${site.theme.line};--serif:${site.theme.serif};--sans:${site.theme.sans};`;
+---
+<!doctype html>
+<html lang="fr" style={style}>
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><Seo title={title} description={description} site={site} image={image} /></head>
+  <body><Header site={site} navigation={navigation} currentPath={currentPath} /><main class="container"><slot /></main><Footer site={site} /></body>
+</html>

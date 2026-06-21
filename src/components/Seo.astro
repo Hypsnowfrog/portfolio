@@ -1,0 +1,13 @@
+---
+const { title, description, site, image } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const person = { '@context': 'https://schema.org', '@type': 'Person', name: site.artist_name, email: site.email, url: Astro.site?.toString(), sameAs: site.instagram ? [site.instagram] : [] };
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{image && <meta property="og:image" content={new URL(image, Astro.site ?? Astro.url).toString()} />}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(person)} />

@@ -1,0 +1,9 @@
+---
+import type { AboutSettings } from '../lib/content';
+interface Props { sections: AboutSettings['cv_sections']; }
+const { sections } = Astro.props;
+---
+{sections.filter((section) => section.enabled).map((section) => <section class="cv"><h2>{section.title}</h2><ol>{section.items.map((item) => <li><time datetime={String(item.year)}>{item.year}</time><span>{item.text}</span></li>)}</ol></section>)}
+<style>
+  .cv { margin-top: 4rem; max-width: 52rem; } h2 { font: 400 1.6rem var(--serif); } ol { margin: 1.5rem 0; padding: 0; list-style: none; border-top: 1px solid var(--line); } li { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); } time { color: var(--muted); }
+</style>

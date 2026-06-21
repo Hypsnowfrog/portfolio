@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkGrid from '../components/WorkGrid.astro';
+import WorkLightbox from '../components/WorkLightbox.svelte';
+import { getSiteData } from '../lib/content';
+const { site, navigation, works } = await getSiteData();
+const lightboxWorks = works.map((work) => ({ slug: work.slug, title: work.data.title, year: work.data.year, medium: work.data.medium, dimensions: work.data.dimensions, image: work.data.image, alt: work.data.alt, description: work.body, status: work.data.status }));
+---
+<BaseLayout title={`Œuvres — ${site.artist_name}`} description="Sélection d’œuvres récentes et archives." site={site} navigation={navigation} currentPath="/oeuvres/">
+  <h1 class="page-title">Œuvres</h1><p class="prose">Sélection d’œuvres récentes et archives.</p>
+  <WorkGrid works={works} enableFilters={site.enable_filters} />
+  <WorkLightbox works={lightboxWorks} client:load />
+</BaseLayout>

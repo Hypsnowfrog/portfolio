@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutContent from '../components/AboutContent.astro';
+import CvList from '../components/CvList.astro';
+import { getSiteData } from '../lib/content';
+const { site, navigation, about } = await getSiteData();
+---
+<BaseLayout title={`${about.title} — ${site.artist_name}`} description={site.seo_description} site={site} navigation={navigation} currentPath="/a-propos/">
+  <h1 class="page-title">{about.title}</h1><AboutContent about={about} /><CvList sections={about.cv_sections} />
+</BaseLayout>

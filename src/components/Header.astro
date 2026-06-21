@@ -1,0 +1,15 @@
+---
+import Navigation from './Navigation.astro';
+import MobileMenu from './MobileMenu.astro';
+const { site, navigation, currentPath } = Astro.props;
+---
+<header class="container">
+  <a class="brand" href="/" aria-label={`${site.artist_name}, accueil`}>{navigation.logo_label || site.artist_name}</a>
+  <div class="desktop"><Navigation items={navigation.items} currentPath={currentPath} /></div>
+  <MobileMenu items={navigation.items} label={navigation.mobile_menu_label} currentPath={currentPath} />
+</header>
+<style>
+  header { display: flex; align-items: center; justify-content: space-between; min-height: 5rem; border-bottom: 1px solid var(--line); }
+  .brand { font-family: var(--serif); font-size: 1.2rem; text-decoration: none; }
+  @media (max-width: 41.99rem) { .desktop { display: none; } }
+</style>

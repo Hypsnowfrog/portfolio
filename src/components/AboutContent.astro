@@ -1,0 +1,11 @@
+---
+const { about } = Astro.props;
+---
+<section class="about">
+  {about.portrait_enabled && about.portrait && <img src={about.portrait} alt={about.portrait_alt ?? ''} loading="lazy" decoding="async" />}
+  <div class="prose"><h2>Biographie</h2><p>{about.bio}</p><h2>Démarche artistique</h2><p>{about.statement}</p></div>
+</section>
+<style>
+  .about { display: grid; gap: 3rem; } img { width: min(100%, 34rem); } h2 { margin: 0 0 .75rem; font: 400 1.6rem var(--serif); } h2:not(:first-child) { margin-top: 3rem; }
+  @media (min-width: 64rem) { .about { grid-template-columns: minmax(0, 1fr) minmax(20rem, 42rem); align-items: start; } }
+</style>

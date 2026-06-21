@@ -1,0 +1,13 @@
+kind: contact
+title: Contact
+intro: Pour toute demande concernant les œuvres, expositions, collaborations ou acquisitions, contactez l'artiste à l'adresse suivante.
+email: contact@example.com
+instagram: https://instagram.com/example
+form_enabled: false
+show_email: true
+form_name_label: Nom
+form_email_label: Email
+form_message_label: Message
+form_submit_label: Envoyer
+success_message: Votre message a été envoyé.
+error_message: L'envoi a échoué. Veuillez réessayer.

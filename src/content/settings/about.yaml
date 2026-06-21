@@ -1,0 +1,22 @@
+kind: about
+title: À propos
+portrait_enabled: false
+bio: >-
+  Nom Prénom vit et travaille à Ville, France. Son travail s'attache aux gestes
+  répétés, à la lumière et aux transformations lentes de la matière.
+statement: >-
+  Les œuvres naissent d'observations et de reprises. La peinture devient un lieu
+  de présence, où la couleur et la surface restent volontairement ouvertes.
+cv_sections:
+  - title: Expositions
+    enabled: true
+    items:
+      - year: 2024
+        text: Exposition collective, Lieu, Ville
+      - year: 2023
+        text: Exposition personnelle, Lieu, Ville
+  - title: Formation
+    enabled: true
+    items:
+      - year: 2022
+        text: Diplôme, École, Ville

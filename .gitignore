@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+graphify-out/
+.agents/
+.codex/
+AGENTS.md
+skills-lock.json

@@ -1,0 +1,14 @@
+---
+import ResponsiveArtworkImage from './ResponsiveArtworkImage.astro';
+import WorkMeta from './WorkMeta.astro';
+const { work, showCaption = true } = Astro.props;
+---
+{work && <section class="featured" aria-label="Œuvre mise en avant">
+  <a href={`/oeuvres/?work=${encodeURIComponent(work.slug)}`}><ResponsiveArtworkImage work={work} priority={true} /></a>
+  {showCaption && <WorkMeta work={work} />}
+</section>}
+<style>
+  .featured { margin: 3rem auto 0; max-width: 72rem; }
+  .featured :global(.artwork) { min-height: min(70vh, 52rem); }
+  a { display: block; text-decoration: none; }
+</style>

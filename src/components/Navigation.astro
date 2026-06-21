@@ -1,0 +1,15 @@
+---
+import type { NavigationSettings } from '../lib/content';
+interface Props { items: NavigationSettings['items']; currentPath: string; }
+const { items, currentPath } = Astro.props;
+const enabledItems = items.filter((item) => item.enabled);
+---
+<nav aria-label="Navigation principale">
+  <ul>
+    {enabledItems.map((item) => <li><a href={item.url} aria-current={currentPath === item.url ? 'page' : undefined}>{item.label}</a></li>)}
+  </ul>
+</nav>
+<style>
+  ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1rem; margin: 0; padding: 0; list-style: none; font-size: .875rem; }
+  a[aria-current="page"] { text-decoration-thickness: 2px; }
+</style>

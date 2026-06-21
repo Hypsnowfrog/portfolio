@@ -1,0 +1,116 @@
+backend:
+  name: github
+  repo: Hypsnowfrog/portfolio
+  branch: main
+media_folder: public/uploads
+public_folder: /uploads
+collections:
+  - name: works
+    label: Œuvres
+    folder: src/content/works
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Minuscules, chiffres et tirets'] }
+      - { label: Année, name: year, widget: number, value_type: int }
+      - { label: Technique, name: medium, widget: string }
+      - { label: Dimensions, name: dimensions, widget: string }
+      - { label: Catégorie, name: category, widget: string, required: false }
+      - { label: Série, name: series, widget: string, required: false }
+      - { label: Image, name: image, widget: image }
+      - { label: Texte alternatif, name: alt, widget: string, hint: Décrivez l'œuvre, obligatoire pour l'accessibilité. }
+      - { label: Légende, name: caption, widget: string, required: false }
+      - { label: Mise en avant, name: featured, widget: boolean, default: false }
+      - { label: Afficher sur l'accueil, name: show_on_home, widget: boolean, default: false }
+      - { label: Disponible, name: available, widget: boolean, default: false }
+      - { label: Statut, name: status, widget: select, required: false, options: [Disponible, Vendu, Collection privée, Non disponible] }
+      - { label: Ordre, name: order, widget: number, value_type: int, default: 0 }
+      - { label: Affichage image, name: image_display_mode, widget: select, options: [contain, cover, natural, featured-large, hidden-from-home], default: contain }
+      - { label: Fond, name: background_tone, widget: select, options: [light, dark, transparent], default: light }
+      - { label: Orientation, name: orientation_hint, widget: select, options: [auto, landscape, portrait, square, panoramic], default: auto }
+      - { label: Titre SEO, name: seo_title, widget: string, required: false }
+      - { label: Description SEO, name: seo_description, widget: text, required: false }
+      - { label: Description, name: body, widget: markdown, required: false }
+  - name: settings
+    label: Réglages
+    files:
+      - label: Site
+        name: site-settings
+        file: src/content/settings/site-settings.yaml
+        fields:
+          - { label: Type, name: kind, widget: hidden, default: site }
+          - { label: Nom de l'artiste, name: artist_name, widget: string }
+          - { label: Sous-titre, name: subtitle, widget: string, required: false }
+          - { label: Lieu, name: location, widget: string, required: false }
+          - { label: Email, name: email, widget: string }
+          - { label: Instagram, name: instagram, widget: string, required: false }
+          - { label: Titre SEO, name: seo_title, widget: string }
+          - { label: Description SEO, name: seo_description, widget: text }
+          - { label: Œuvre mise en avant, name: featured_work, widget: string, required: false }
+          - { label: Filtres, name: enable_filters, widget: boolean, default: true }
+          - { label: Formulaire global, name: enable_contact_form, widget: boolean, default: false }
+          - label: Thème
+            name: theme
+            widget: object
+            fields:
+              - { label: Fond, name: background, widget: color }
+              - { label: Texte, name: text, widget: color }
+              - { label: Texte secondaire, name: muted, widget: color }
+              - { label: Ligne, name: line, widget: color }
+              - { label: Serif, name: serif, widget: string }
+              - { label: Sans-serif, name: sans, widget: string }
+      - label: Accueil
+        name: homepage
+        file: src/content/settings/homepage.yaml
+        fields:
+          - { label: Type, name: kind, widget: hidden, default: homepage }
+          - { label: Titre, name: title, widget: string, required: false }
+          - { label: Introduction, name: intro, widget: text, required: false }
+          - { label: Œuvre mise en avant, name: featured_work, widget: string, required: false }
+          - { label: Afficher le héros, name: hero_enabled, widget: boolean, default: true }
+          - { label: Afficher la légende, name: featured_caption_enabled, widget: boolean, default: true }
+          - { label: Œuvres récentes, name: recent_section_enabled, widget: boolean, default: true }
+          - { label: Titre de section, name: recent_section_title, widget: string }
+          - { label: Nombre d'œuvres, name: recent_count, widget: number, value_type: int }
+          - { label: Libellé du lien, name: call_to_action_label, widget: string }
+          - { label: URL du lien, name: call_to_action_url, widget: string }
+      - label: À propos
+        name: about
+        file: src/content/settings/about.yaml
+        fields:
+          - { label: Type, name: kind, widget: hidden, default: about }
+          - { label: Titre, name: title, widget: string }
+          - { label: Portrait, name: portrait, widget: image, required: false }
+          - { label: Texte alternatif du portrait, name: portrait_alt, widget: string, required: false }
+          - { label: Afficher le portrait, name: portrait_enabled, widget: boolean, default: true }
+          - { label: Biographie, name: bio, widget: text }
+          - { label: Démarche, name: statement, widget: text }
+      - label: Contact
+        name: contact
+        file: src/content/settings/contact.yaml
+        fields:
+          - { label: Type, name: kind, widget: hidden, default: contact }
+          - { label: Titre, name: title, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: Instagram, name: instagram, widget: string, required: false }
+          - { label: Formulaire actif, name: form_enabled, widget: boolean, default: false }
+          - { label: Afficher l'email, name: show_email, widget: boolean, default: true }
+          - { label: Endpoint du formulaire, name: form_endpoint, widget: string, required: false }
+      - label: Navigation
+        name: navigation
+        file: src/content/settings/navigation.yaml
+        fields:
+          - { label: Type, name: kind, widget: hidden, default: navigation }
+          - { label: Libellé logo, name: logo_label, widget: string }
+          - { label: Libellé menu mobile, name: mobile_menu_label, widget: string }
+          - label: Liens
+            name: items
+            widget: list
+            fields:
+              - { label: Libellé, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Actif, name: enabled, widget: boolean, default: true }

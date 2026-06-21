@@ -1,0 +1,8 @@
+---
+import WorkGrid from './WorkGrid.astro';
+const { works, title } = Astro.props;
+---
+<section class="recent"><h2>{title}</h2><WorkGrid works={works} enableFilters={false} /></section>
+<style>
+  .recent { margin-top: 6rem; } h2 { margin: 0 0 2rem; font: 400 clamp(1.75rem, 4vw, 3rem)/1 var(--serif); }
+</style>

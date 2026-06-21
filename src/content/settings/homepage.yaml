@@ -1,0 +1,11 @@
+kind: homepage
+title: Nom Prénom
+intro: Une pratique attentive à la matière, au temps et aux formes qui apparaissent entre les deux.
+featured_work: sans-titre-2024
+hero_enabled: true
+featured_caption_enabled: true
+recent_section_enabled: true
+recent_section_title: Œuvres récentes
+recent_count: 6
+call_to_action_label: Voir les œuvres
+call_to_action_url: /oeuvres/

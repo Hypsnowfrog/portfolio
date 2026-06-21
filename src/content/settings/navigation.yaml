@@ -1,0 +1,14 @@
+kind: navigation
+logo_label: Nom Prénom
+mobile_menu_label: Menu
+show_instagram_in_nav: false
+items:
+  - label: Œuvres
+    url: /oeuvres/
+    enabled: true
+  - label: À propos
+    url: /a-propos/
+    enabled: true
+  - label: Contact
+    url: /contact/
+    enabled: true

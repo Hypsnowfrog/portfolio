@@ -1,0 +1,21 @@
+kind: site
+artist_name: Nom Prénom
+subtitle: Artiste plasticien
+location: Ville, France
+email: contact@example.com
+instagram: https://instagram.com/example
+seo_title: Nom Prénom — Artiste
+seo_description: Site officiel de Nom Prénom, artiste basé à Ville, France.
+featured_work: sans-titre-2024
+homepage_recent_count: 6
+default_image_display_mode: contain
+enable_filters: true
+enable_contact_form: false
+theme:
+  background: '#f6f5f1'
+  text: '#111111'
+  muted: '#8a8780'
+  line: '#dedbd2'
+  serif: Georgia, serif
+  sans: Inter, Helvetica, Arial, sans-serif
+footer_links: []

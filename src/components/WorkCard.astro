@@ -1,0 +1,15 @@
+---
+import ResponsiveArtworkImage from './ResponsiveArtworkImage.astro';
+import WorkMeta from './WorkMeta.astro';
+const { work } = Astro.props;
+---
+<article class="work-card" data-work-card data-category={work.data.category ?? ''}>
+  <a href={`?work=${encodeURIComponent(work.slug)}`} data-work={work.slug} aria-label={`Ouvrir ${work.data.title}, ${work.data.year}`}>
+    <ResponsiveArtworkImage work={work} />
+    <WorkMeta work={work} />
+  </a>
+</article>
+<style>
+  .work-card { break-inside: avoid; margin-bottom: clamp(2rem, 4vw, 4rem); }
+  a { display: block; text-decoration: none; }
+</style>

@@ -1,0 +1,12 @@
+---
+const { site } = Astro.props;
+---
+<footer class="container">
+  <div><strong>{site.artist_name}</strong>{site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}</div>
+  <div>{site.instagram && <a href={site.instagram} rel="me external">Instagram</a>}<span>© {new Date().getFullYear()} {site.artist_name}</span></div>
+</footer>
+<style>
+  footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 6rem; padding: 1.5rem 0 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  footer div { display: flex; flex-wrap: wrap; gap: 1rem; }
+  strong { color: var(--text); font-weight: 500; }
+</style>

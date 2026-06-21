@@ -1,0 +1,18 @@
+---
+const { work, priority = false, class: className = '' } = Astro.props;
+const mode = work.data.image_display_mode === 'featured-large' ? 'contain' : work.data.image_display_mode;
+---
+<div class:list={['artwork', `mode-${mode}`, `tone-${work.data.background_tone}`, className]}>
+  <img src={work.data.image} alt={work.data.alt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />
+</div>
+<style>
+  .artwork { display: grid; place-items: center; background: var(--white, #fff); }
+  img { width: 100%; height: auto; }
+  .mode-contain { padding: clamp(.5rem, 2vw, 1.5rem); }
+  .mode-contain img { object-fit: contain; }
+  .mode-cover { aspect-ratio: 4 / 3; overflow: hidden; }
+  .mode-cover img { width: 100%; height: 100%; object-fit: cover; }
+  .mode-natural { background: transparent; }
+  .tone-dark { background: #222; }
+  .tone-transparent { background: transparent; }
+</style>

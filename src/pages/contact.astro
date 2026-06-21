@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { getSiteData } from '../lib/content';
+const { site, navigation, contact } = await getSiteData();
+const email = contact.email || site.email;
+const instagram = contact.instagram || site.instagram;
+---
+<BaseLayout title={`${contact.title} — ${site.artist_name}`} description={contact.intro || site.seo_description} site={site} navigation={navigation} currentPath="/contact/">
+  <h1 class="page-title">{contact.title}</h1><p class="prose">{contact.intro}</p>
+  <div class="details">{contact.show_email && email && <a href={`mailto:${email}`}>{email}</a>}{instagram && <a href={instagram} rel="me external">Instagram</a>}</div>
+  <ContactForm contact={contact} />
+</BaseLayout>
+<style>.details { display: grid; gap: .75rem; margin-top: 2rem; }</style>
