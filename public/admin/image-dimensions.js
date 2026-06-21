@@ -1,5 +1,5 @@
 (() => {
-  const getField = (scope, name) => scope.querySelector(`[name="${name}"]`) ?? document.querySelector(`[name="${name}"]`);
+  const getField = (name) => document.querySelector(`[data-key-path="${name}"] input`);
 
   const setField = (field, value) => {
     field.value = String(value);
@@ -19,9 +19,8 @@
     const input = event.target;
     if (!(input instanceof HTMLInputElement) || input.type !== 'file' || !input.files?.[0]) return;
 
-    const scope = input.closest('form') ?? document;
-    const widthField = getField(scope, 'image_width');
-    const heightField = getField(scope, 'image_height');
+    const widthField = getField('image_width');
+    const heightField = getField('image_height');
     if (!widthField || !heightField) return;
 
     try {
