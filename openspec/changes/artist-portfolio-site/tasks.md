@@ -26,12 +26,12 @@
 - [x] 4.1 Implémenter `WorkLightbox.svelte` comme île unique avec dialogue modal, image `object-fit: contain` et métadonnées responsives.
 - [x] 4.2 Ajouter les contrôles fermer/précédent/suivant, Échap, flèches clavier, focus trap, verrouillage du scroll et restauration du focus.
 - [x] 4.3 Synchroniser l'état avec `?work=<slug>`, `pushState` et `popstate`, y compris la fermeture et les liens entrants invalides.
-- [ ] 4.4 Vérifier au clavier et sur écran tactile les ratios portrait, paysage, carré et panoramique.
+- [x] 4.4 Vérifier au clavier et sur écran tactile les ratios portrait, paysage, carré et panoramique.
 
 ## 5. Qualité, SEO et publication
 
 - [x] 5.1 Ajouter les métadonnées globales/par page, Open Graph configurable, JSON-LD Person, `robots.txt` et sitemap.
-- [ ] 5.2 Vérifier HTML sémantique, contraste, focus visible, prefers-reduced-motion et consultation utile sans JavaScript.
-- [ ] 5.3 Ajouter le workflow GitHub Actions de build et déploiement GitHub Pages ainsi que `public/CNAME` avec une procédure de remplacement du domaine.
+- [x] 5.2 Vérifier HTML sémantique, contraste, focus visible, prefers-reduced-motion et consultation utile sans JavaScript.
+- [x] 5.3 Ajouter le workflow GitHub Actions de build et déploiement GitHub Pages ainsi que `public/CNAME` avec une procédure de remplacement du domaine.
 - [x] 5.4 Documenter dans README les limites d'upload (poids, dimensions, formats), l'accès Sveltia, le domaine DNS et la configuration de l'endpoint de formulaire.
-- [ ] 5.5 Exécuter `npm run build`, tester les quatre routes, liens de partage lightbox, navigation clavier, écran mobile et production GitHub Pages.
+- [x] 5.5 Exécuter `npm run build`, tester les quatre routes, liens de partage lightbox, navigation clavier, écran mobile et production GitHub Pages.

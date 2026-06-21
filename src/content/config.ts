@@ -19,6 +19,8 @@ const works = defineCollection({
     category: z.string().optional(),
     series: z.string().optional(),
     image: z.string().startsWith('/uploads/'),
+    image_width: z.coerce.number().int().positive(),
+    image_height: z.coerce.number().int().positive(),
     alt: z.string().min(1),
     caption: z.string().optional(),
     featured: z.boolean().default(false),

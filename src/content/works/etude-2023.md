@@ -7,6 +7,8 @@ dimensions: 50 × 35 cm
 category: Études
 series: Formes
 image: /uploads/etude-2023.svg
+image_width: 700
+image_height: 1000
 alt: Dessin vertical noir et gris sur papier clair.
 featured: false
 show_on_home: true

@@ -7,6 +7,8 @@ dimensions: 80 × 100 cm
 category: Peinture
 series: Portraits
 image: /uploads/sans-titre-2024.svg
+image_width: 1200
+image_height: 900
 alt: Composition abstraite bleu profond et ocre sur fond clair.
 featured: true
 show_on_home: true

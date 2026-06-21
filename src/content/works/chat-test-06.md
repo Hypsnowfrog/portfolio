@@ -7,6 +7,8 @@ dimensions: Dimensions variables
 category: Tests
 series: Chats
 image: /uploads/chat-test-06.jpg
+image_width: 960
+image_height: 960
 alt: Chat de test 06.
 featured: false
 show_on_home: false

@@ -4,7 +4,7 @@ const { work, priority = false, class: className = '' } = Astro.props;
 const mode = work.data.image_display_mode === 'featured-large' ? 'contain' : work.data.image_display_mode;
 ---
 <div class:list={['artwork', `mode-${mode}`, `tone-${work.data.background_tone}`, className]}>
-  <img src={withBase(work.data.image)} alt={work.data.alt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />
+  <img src={withBase(work.data.image)} alt={work.data.alt} width={work.data.image_width} height={work.data.image_height} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />
 </div>
 <style>
   .artwork { display: grid; place-items: center; background: var(--white, #fff); }
