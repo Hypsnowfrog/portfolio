@@ -1,7 +1,9 @@
 (() => {
   const getField = (name) => document.querySelector(`[data-key-path="${name}"] input`);
 
-  const setField = (field, value) => {
+  const setField = (name, value) => {
+    const field = getField(name);
+    if (!field) throw new Error(`Missing ${name} field`);
     field.value = String(value);
     field.dispatchEvent(new Event('input', { bubbles: true }));
     field.dispatchEvent(new Event('change', { bubbles: true }));
@@ -19,15 +21,14 @@
     const input = event.target;
     if (!(input instanceof HTMLInputElement) || input.type !== 'file' || !input.files?.[0]) return;
 
-    const widthField = getField('image_width');
-    const heightField = getField('image_height');
-    if (!widthField || !heightField) return;
+    if (!getField('image_width') || !getField('image_height')) return;
 
     try {
       const [width, height] = await getDimensions(input.files[0]);
       if (!width || !height) throw new Error('Invalid image dimensions');
-      setField(widthField, width);
-      setField(heightField, height);
+      setField('image_width', width);
+      await new Promise(requestAnimationFrame);
+      setField('image_height', height);
     } catch {
       window.alert("Impossible de lire les dimensions de l’image. Renseignez la largeur et la hauteur manuellement.");
     }
