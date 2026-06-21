@@ -1,10 +1,11 @@
 ---
 import ResponsiveArtworkImage from './ResponsiveArtworkImage.astro';
 import WorkMeta from './WorkMeta.astro';
+import { withBase } from '../lib/url';
 const { work, showCaption = true } = Astro.props;
 ---
 {work && <section class="featured" aria-label="Œuvre mise en avant">
-  <a href={`/oeuvres/?work=${encodeURIComponent(work.slug)}`}><ResponsiveArtworkImage work={work} priority={true} /></a>
+  <a href={withBase(`/oeuvres/?work=${encodeURIComponent(work.slug)}`)}><ResponsiveArtworkImage work={work} priority={true} /></a>
   {showCaption && <WorkMeta work={work} />}
 </section>}
 <style>

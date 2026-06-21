@@ -1,10 +1,11 @@
 ---
 import Navigation from './Navigation.astro';
 import MobileMenu from './MobileMenu.astro';
+import { withBase } from '../lib/url';
 const { site, navigation, currentPath } = Astro.props;
 ---
 <header class="container">
-  <a class="brand" href="/" aria-label={`${site.artist_name}, accueil`}>{navigation.logo_label || site.artist_name}</a>
+  <a class="brand" href={withBase('/')} aria-label={`${site.artist_name}, accueil`}>{navigation.logo_label || site.artist_name}</a>
   <div class="desktop"><Navigation items={navigation.items} currentPath={currentPath} /></div>
   <MobileMenu items={navigation.items} label={navigation.mobile_menu_label} currentPath={currentPath} />
 </header>

@@ -15,7 +15,7 @@ Le build de production est vérifié avec `npm run build`.
 
 - Les œuvres sont dans `src/content/works/` ; l'alt est obligatoire.
 - Les réglages et pages sont dans `src/content/settings/`.
-- Sveltia écrit les médias dans `public/uploads/`. Remplacez `REPLACE_WITH_OWNER/REPLACE_WITH_REPOSITORY` dans `public/admin/config.yml` avant de l'utiliser.
+- Sveltia écrit les médias dans `public/uploads/` et est déjà configuré pour `Hypsnowfrog/portfolio`.
 - Gardez les images sous 2500 px sur le grand côté et idéalement sous 2 Mo. Préparez-les en WebP/JPEG/PNG ; l'original haute définition reste hors du dépôt.
 - `contain` préserve systématiquement l'œuvre. `cover` est l'exception volontaire ; `natural` n'impose aucun cadre.
 

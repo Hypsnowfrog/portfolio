@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/url';
 const { title, description, site, image } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 const person = { '@context': 'https://schema.org', '@type': 'Person', name: site.artist_name, email: site.email, url: Astro.site?.toString(), sameAs: site.instagram ? [site.instagram] : [] };
@@ -9,5 +10,5 @@ const person = { '@context': 'https://schema.org', '@type': 'Person', name: site
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{image && <meta property="og:image" content={new URL(image, Astro.site ?? Astro.url).toString()} />}
+{image && <meta property="og:image" content={new URL(withBase(image), Astro.site ?? Astro.url).toString()} />}
 <script is:inline type="application/ld+json" set:html={JSON.stringify(person)} />

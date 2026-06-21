@@ -3,12 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FeaturedWork from '../components/FeaturedWork.astro';
 import RecentWorks from '../components/RecentWorks.astro';
 import { getSiteData } from '../lib/content';
+import { withBase } from '../lib/url';
 const { site, homepage, navigation, works } = await getSiteData();
 const featured = works.find((work) => work.slug === (homepage.featured_work || site.featured_work)) ?? works.find((work) => work.data.featured);
 const recent = works.filter((work) => work.data.show_on_home && work.data.image_display_mode !== 'hidden-from-home').slice(0, homepage.recent_count);
 ---
 <BaseLayout title={site.seo_title} description={site.seo_description} site={site} navigation={navigation} currentPath="/" image={site.og_image}>
-  {homepage.hero_enabled && <section class="hero"><p class="eyebrow">{site.subtitle}</p><h1>{homepage.title || site.artist_name}</h1>{homepage.intro && <p class="intro">{homepage.intro}</p>}<FeaturedWork work={featured} showCaption={homepage.featured_caption_enabled} /><a class="cta" href={homepage.call_to_action_url}>{homepage.call_to_action_label}</a></section>}
+  {homepage.hero_enabled && <section class="hero"><p class="eyebrow">{site.subtitle}</p><h1>{homepage.title || site.artist_name}</h1>{homepage.intro && <p class="intro">{homepage.intro}</p>}<FeaturedWork work={featured} showCaption={homepage.featured_caption_enabled} /><a class="cta" href={withBase(homepage.call_to_action_url)}>{homepage.call_to_action_label}</a></section>}
   {homepage.recent_section_enabled && recent.length > 0 && <RecentWorks works={recent} title={homepage.recent_section_title} />}
 </BaseLayout>
 <style>
