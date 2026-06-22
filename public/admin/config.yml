@@ -86,6 +86,20 @@ collections:
           - { label: Afficher le portrait, name: portrait_enabled, widget: boolean, default: true }
           - { label: Biographie, name: bio, widget: text }
           - { label: Démarche, name: statement, widget: text }
+          - label: Sections CV
+            name: cv_sections
+            widget: list
+            required: false
+            fields:
+              - { label: Titre de section, name: title, widget: string }
+              - { label: Active, name: enabled, widget: boolean, default: true }
+              - label: Entrées
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - { label: Année, name: year, widget: number, value_type: int }
+                  - { label: Texte, name: text, widget: string }
       - label: Contact
         name: contact
         file: src/content/settings/contact.yaml
