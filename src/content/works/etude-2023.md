@@ -1,4 +1,5 @@
 ---
+created_at: 2026-06-21T21:04:49+02:00
 title: Étude pour une forme
 slug: etude-pour-une-forme-2023
 year: 2023
@@ -12,9 +13,7 @@ image_height: 1000
 alt: Dessin vertical noir et gris sur papier clair.
 featured: false
 show_on_home: true
-available: true
 status: Disponible
-order: 2
 image_display_mode: contain
 background_tone: light
 orientation_hint: portrait

@@ -23,7 +23,7 @@ export async function getSiteData(): Promise<SiteData> {
     getEntry('settings', 'contact'), getEntry('settings', 'navigation'), getCollection('works'),
   ]);
   if (!site || !homepage || !about || !contact || !navigation) throw new Error('Les réglages CMS requis sont absents.');
-  const works = entries.sort((a, b) => a.data.order - b.data.order || b.data.year - a.data.year);
+  const works = entries.sort((a, b) => b.data.year - a.data.year || b.data.created_at.getTime() - a.data.created_at.getTime());
   return {
     site: site.data as SiteSettings,
     homepage: homepage.data as HomepageSettings,

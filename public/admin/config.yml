@@ -21,15 +21,12 @@ collections:
       - { label: Catégorie, name: category, widget: string, required: false }
       - { label: Série, name: series, widget: string, required: false }
       - { label: Image, name: image, widget: image }
-      - { label: Largeur de l'image (px), name: image_width, widget: number, value_type: int, min: 1, required: true, hint: Remplie automatiquement après l’insertion de l’image. }
-      - { label: Hauteur de l'image (px), name: image_height, widget: number, value_type: int, min: 1, required: true, hint: Remplie automatiquement après l’insertion de l’image. }
       - { label: Texte alternatif, name: alt, widget: string, hint: Décrivez l'œuvre, obligatoire pour l'accessibilité. }
       - { label: Légende, name: caption, widget: string, required: false }
       - { label: Mise en avant, name: featured, widget: boolean, default: false }
       - { label: Afficher sur l'accueil, name: show_on_home, widget: boolean, default: false }
-      - { label: Disponible, name: available, widget: boolean, default: false }
-      - { label: Statut, name: status, widget: select, required: false, options: [Disponible, Vendu, Collection privée, Non disponible] }
-      - { label: Ordre, name: order, widget: number, value_type: int, default: 0 }
+      - { label: Statut, name: status, widget: select, required: true, dropdown_threshold: 1, options: [Disponible, Vendu, Collection privée, Non disponible] }
+      - { name: created_at, widget: hidden, default: '{{now}}' }
       - { label: Affichage image, name: image_display_mode, widget: select, options: [contain, cover, natural, featured-large, hidden-from-home], default: contain }
       - { label: Fond, name: background_tone, widget: select, options: [light, dark, transparent], default: light }
       - { label: Orientation, name: orientation_hint, widget: select, options: [auto, landscape, portrait, square, panoramic], default: auto }

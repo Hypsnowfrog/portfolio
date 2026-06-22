@@ -1,4 +1,5 @@
 ---
+created_at: 2026-06-22T00:42:53+02:00
 title: Pate nuggets
 slug: pates-nugget
 year: 2023
@@ -13,9 +14,7 @@ alt: pates
 caption: ''
 featured: false
 show_on_home: false
-available: false
-status: ''
-order: 0
+status: Non disponible
 image_display_mode: contain
 background_tone: light
 orientation_hint: auto

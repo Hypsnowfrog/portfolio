@@ -1,4 +1,5 @@
 ---
+created_at: 2026-06-21T22:03:37+02:00
 title: Chat de test 43
 slug: chat-de-test-43
 year: 2026
@@ -12,9 +13,7 @@ image_height: 820
 alt: Chat de test 43.
 featured: false
 show_on_home: false
-available: false
 status: Non disponible
-order: 1043
 image_display_mode: contain
 background_tone: light
 orientation_hint: auto

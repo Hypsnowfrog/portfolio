@@ -1,4 +1,5 @@
 ---
+created_at: 2026-06-21T22:03:37+02:00
 title: Chat de test 12
 slug: chat-de-test-12
 year: 2026
@@ -12,9 +13,7 @@ image_height: 4032
 alt: Chat de test 12.
 featured: false
 show_on_home: false
-available: false
 status: Non disponible
-order: 1012
 image_display_mode: contain
 background_tone: light
 orientation_hint: auto

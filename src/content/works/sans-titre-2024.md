@@ -1,4 +1,5 @@
 ---
+created_at: 2026-06-21T21:04:49+02:00
 title: Sans titre
 slug: sans-titre-2024
 year: 2024
@@ -12,9 +13,7 @@ image_height: 900
 alt: Composition abstraite bleu profond et ocre sur fond clair.
 featured: true
 show_on_home: true
-available: false
 status: Collection privée
-order: 1
 image_display_mode: contain
 background_tone: light
 orientation_hint: landscape
