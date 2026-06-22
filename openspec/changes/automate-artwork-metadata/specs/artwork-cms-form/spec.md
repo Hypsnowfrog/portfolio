@@ -18,6 +18,6 @@ The CMS SHALL not expose generated image dimensions, manual display order, or a 
 - **WHEN** an editor opens the artwork creation form
 - **THEN** it shows neither dimension fields, an order field, nor an availability toggle
 
-#### Scenario: Timestamp creation
+#### Scenario: Timestamp omitted from CMS
 - **WHEN** an editor creates an artwork
-- **THEN** the CMS stores its creation timestamp without requiring manual input
+- **THEN** the CMS does not expose or write a creation timestamp

@@ -25,3 +25,7 @@ The system SHALL sort artwork by year descending, then by `created_at` descendin
 #### Scenario: Legacy artwork without a date
 - **WHEN** a legacy artwork has no `created_at` field and its creation commit is available
 - **THEN** the metadata step records that commit timestamp in its frontmatter
+
+#### Scenario: Invalid CMS timestamp
+- **WHEN** an artwork contains a missing or invalid `created_at` value and its creation commit is available
+- **THEN** the metadata step replaces it with the creation commit timestamp before Astro validates content

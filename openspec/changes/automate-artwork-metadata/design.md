@@ -20,7 +20,7 @@ Artwork dimensions reserve layout space and are required by the Astro content sc
 
 - Use a `prebuild` Node script with `sharp` to update `image_width` and `image_height` in artwork frontmatter. `sharp` supports every image type accepted by Sveltia (AVIF, GIF, JPEG, PNG, WebP, SVG) and inspects the local source that will actually be published.
 - Declare `sharp` directly as a development dependency. Astro currently brings it transitively, but build tooling must not rely on a transitive package contract.
-- The script adds `created_at` only to legacy entries, using their Git creation commit. New CMS entries receive it through a hidden `{{now}}` field. The script fails for a missing date when Git history is unavailable, rather than inventing a filesystem-derived date.
+- The script adds `created_at` from the Git creation commit whenever the field is absent or invalid. The CMS does not write this build-owned field. The script fails when Git creation history is unavailable, rather than inventing a filesystem-derived date.
 - Remove `order` during metadata sync and sort year descending, then `created_at` descending in the content loader.
 - Keep true binary decisions (`featured`, `show_on_home`) as booleans. Remove `available`, because the required status select already represents availability.
 - Set the status select `required: true` and `dropdown_threshold: 1`, avoiding an empty enum value and radio-button UI.

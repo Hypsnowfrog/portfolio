@@ -30,6 +30,11 @@ function legacyCreatedAt(file) {
   return date;
 }
 
+function createdAt(source, file) {
+  const value = getField(source, 'created_at')?.replace(/^['"]|['"]$/g, '');
+  return value && !Number.isNaN(Date.parse(value)) ? value : legacyCreatedAt(file);
+}
+
 async function sync(file) {
   const original = await readFile(file, 'utf8');
   const image = getField(original, 'image')?.replace(/^['"]|['"]$/g, '');
@@ -41,7 +46,7 @@ async function sync(file) {
 
   let updated = setField(original, 'image_width', width);
   updated = setField(updated, 'image_height', height);
-  updated = setField(updated, 'created_at', getField(updated, 'created_at') || legacyCreatedAt(file));
+  updated = setField(updated, 'created_at', createdAt(updated, file));
   if (!statuses.has(getField(updated, 'status')?.replace(/^['"]|['"]$/g, ''))) {
     updated = setField(updated, 'status', getField(original, 'available') === 'true' ? 'Disponible' : 'Non disponible');
   }

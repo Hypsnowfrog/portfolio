@@ -6,7 +6,7 @@ The CMS relies on a browser script that mutates its rendered fields after upload
 
 - Derive artwork image dimensions during the build from the locally uploaded image, without CMS fields or browser-side mutation.
 - Replace the optional status radios with one required status dropdown and remove the duplicate availability toggle.
-- Record an artwork creation timestamp automatically and use it to break ties between artworks from the same year.
+- Derive an artwork creation timestamp from its Git creation commit and use it to break ties between artworks from the same year.
 - **BREAKING** Remove the editorial `order` frontmatter field. Keep `image_width` and `image_height` as generated metadata, not CMS inputs.
 
 ## Capabilities

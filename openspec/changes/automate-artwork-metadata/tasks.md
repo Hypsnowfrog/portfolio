@@ -9,6 +9,7 @@
 - [x] 2.2 Simplify the artwork CMS form: generated dimensions hidden, `order` and duplicate availability removed, required status dropdown, and hidden creation timestamp.
 - [x] 2.3 Remove the browser-side dimension enhancement.
 - [x] 2.4 Sort artwork by year, then creation date for equal years.
+- [x] 2.5 Normalize invalid creation timestamps during metadata sync.
 
 ## 3. Verification
 
